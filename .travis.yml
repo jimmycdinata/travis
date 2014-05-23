@@ -21,6 +21,4 @@ before_script:
   - if [[ "$DB" == "pgsql" ]]; then psql -c "create database hello_world_test;" -U postgres; fi
   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot; fi
 
-# configure notifications (email, IRC, campfire etc)
-notifications:
-  irc: "irc.freenode.org#yourfavouriteroomfortravis"
+script: phpunit tests/
